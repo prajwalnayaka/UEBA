@@ -23,3 +23,24 @@ I chose to train an isolation forest given the low complexity of the dataset. I 
 ## dashboard.py
 
 I used streamlit and altair to create and present a simple dashboard which would be used in Security Operation Center(SOC). 
+
+
+## Run it locally
+
+If you want this project on your local machine:
+## 🛠️ Local Installation
+
+If you want to run this dashboard on your own machine:
+
+```
+# 1. Clone the repository
+git clone [https://github.com/yourusername/UEBA.git](https://github.com/yourusername/UEBA.git)
+
+# 2. Navigate to the project directory
+cd UEBA
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Run the dashboard
+streamlit run dashboard.py```
