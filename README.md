@@ -25,6 +25,8 @@ I chose to train an isolation forest given the low complexity of the dataset. I 
 I used streamlit and altair to create and present a simple dashboard which would be used in Security Operation Center(SOC). 
 
 
+
+
 ## Run it locally
 
 If you want this project on your local machine:
