@@ -1,5 +1,6 @@
 
 # UEBA
+___
 
 UEBA stands for User & Entity Behavior Analysis. Its the process of identifying a baseline normal behabvior, training a machine learning model to learn the characteristics of the normal behabvior and using it to idetify and isolate outliers.
 
@@ -10,23 +11,28 @@ I injected some "suspicious" behabvior into the logs. Extracted features from th
 
 
 ### data_synthesis.py
+___
 
 This script creates a dataset of logs. It comprises of timestamp, admin_id, action performed, admin's IP address and status of action. Poisson distribution is used to detemine the number of actions an admin performs per day, this is done to best simulate how people naturally work.
 
 ### feature_engineering.py
+___
 
 Here I extract features from the generated dataset that can be used to detemine whether an admin has gone rogue or is working normally. These feature are: hour of the day the action is peformed, number of actions performed per second and if the IP address of the admin is different from the one they mostly use.
 
 ### train_isolation.py
+___
 
 I chose to train an isolation forest given the low complexity of the dataset. I tweaked around with the conamination hyperparamter until I found the best value.
 
 ### dashboard.py
+___
 
 I used streamlit and altair to create and present a simple dashboard which would be used in Security Operation Center(SOC). 
 
 
 ## Run it locally
+___
 
 If you want this project on your local machine:
 
