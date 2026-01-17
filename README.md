@@ -10,6 +10,7 @@ I injected some "suspicious" behabvior into the logs. Extracted features from th
 
 
 ### data_synthesis.py
+___
 
 This script creates a dataset of logs. It comprises of timestamp, admin_id, action performed, admin's IP address and status of action. Poisson distribution is used to detemine the number of actions an admin performs per day, this is done to best simulate how people naturally work.
 
