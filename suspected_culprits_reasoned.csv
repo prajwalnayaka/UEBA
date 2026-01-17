@@ -1,0 +1,77 @@
+timestamp,admin_id,action,ip_address,actions_per_min,reason
+06/01/2024 14:26,admin_1,login,93.148.119.45,0.000334737,Unknown IP
+06/01/2024 14:27,admin_1,view_player_profile,93.148.119.45,1.111111111,Unknown IP
+06/01/2024 14:27,admin_1,reset_password,93.148.119.45,4,Unknown IP
+06/01/2024 14:30,admin_1,view_player_profile,93.148.119.45,0.517241379,Unknown IP
+06/01/2024 14:31,admin_1,view_player_profile,93.148.119.45,1.428571429,Unknown IP
+06/01/2024 14:35,admin_1,unban_player,93.148.119.45,0.508474576,Unknown IP
+06/01/2024 14:35,admin_1,reset_password,93.148.119.45,3.333333333,Unknown IP
+06/01/2024 14:35,admin_1,view_player_profile,93.148.119.45,2.222222222,Unknown IP
+06/01/2024 14:36,admin_1,view_player_profile,93.148.119.45,2.307692308,Unknown IP
+06/01/2024 14:39,admin_1,reset_password,93.148.119.45,1.276595745,Unknown IP
+06/01/2024 14:40,admin_1,view_player_profile,93.148.119.45,2.727272727,Unknown IP
+06/01/2024 14:40,admin_1,view_player_profile,93.148.119.45,1.875,Unknown IP
+06/01/2024 14:41,admin_1,view_player_profile,93.148.119.45,1.090909091,Unknown IP
+06/01/2024 14:41,admin_1,reset_password,93.148.119.45,4.285714286,Unknown IP
+06/01/2024 14:43,admin_1,reset_password,93.148.119.45,6,High Speed + Unknown IP
+06/01/2024 14:45,admin_1,view_player_profile,93.148.119.45,0.52173913,Unknown IP
+06/01/2024 14:47,admin_1,reset_password,93.148.119.45,2.307692308,Unknown IP
+06/01/2024 14:47,admin_1,view_player_profile,93.148.119.45,1.25,Unknown IP
+06/01/2024 14:48,admin_1,view_player_profile,93.148.119.45,1.176470588,Unknown IP
+06/01/2024 14:50,admin_1,reset_password,93.148.119.45,0.517241379,Unknown IP
+06/01/2024 14:51,admin_1,reset_password,93.148.119.45,1.363636364,Unknown IP
+06/01/2024 14:53,admin_1,reset_password,93.148.119.45,0.530973451,Unknown IP
+06/01/2024 14:53,admin_1,view_player_profile,93.148.119.45,1.621621622,Unknown IP
+06/01/2024 14:54,admin_1,view_player_profile,93.148.119.45,1.304347826,Unknown IP
+06/01/2024 14:59,admin_1,view_player_profile,93.148.119.45,0.512820513,Unknown IP
+06/01/2024 15:05,admin_1,reset_password,93.148.119.45,1.935483871,Unknown IP
+06/01/2024 15:05,admin_1,view_player_profile,93.148.119.45,2.222222222,Unknown IP
+06/01/2024 15:07,admin_1,logout,93.148.119.45,2.608695652,Unknown IP
+16/01/2024 03:00,admin_1,ban_player,92.226.40.119,0.001068776,Unknown IP + Unusual Time
+19/01/2024 13:52,admin_2,login,56.147.138.127,0.000637004,Unknown IP
+19/01/2024 13:57,admin_2,view_player_profile,56.147.138.127,6,High Speed + Unknown IP
+19/01/2024 14:02,admin_2,reset_password,56.147.138.127,0.530973451,Unknown IP
+19/01/2024 14:03,admin_2,reset_password,56.147.138.127,1.090909091,Unknown IP
+19/01/2024 14:04,admin_2,view_player_profile,56.147.138.127,1.25,Unknown IP
+19/01/2024 14:04,admin_2,view_player_profile,56.147.138.127,1.5,Unknown IP
+19/01/2024 14:05,admin_2,view_player_profile,56.147.138.127,1.132075472,Unknown IP
+19/01/2024 14:06,admin_2,view_player_profile,56.147.138.127,1.578947368,Unknown IP
+19/01/2024 14:07,admin_2,reset_password,56.147.138.127,1.25,Unknown IP
+19/01/2024 14:07,admin_2,view_player_profile,56.147.138.127,1.666666667,Unknown IP
+19/01/2024 14:09,admin_2,modify_currency,56.147.138.127,0.512820513,Unknown IP
+19/01/2024 14:10,admin_2,modify_currency,56.147.138.127,1.764705882,Unknown IP
+19/01/2024 14:12,admin_2,reset_password,56.147.138.127,0.545454545,Unknown IP
+19/01/2024 14:16,admin_2,view_player_profile,56.147.138.127,0.631578947,Unknown IP
+19/01/2024 14:18,admin_2,modify_currency,56.147.138.127,0.504201681,Unknown IP
+19/01/2024 14:20,admin_2,view_player_profile,56.147.138.127,3.75,Unknown IP
+19/01/2024 14:23,admin_2,reset_password,56.147.138.127,1.538461538,Unknown IP
+19/01/2024 14:24,admin_2,reset_password,56.147.138.127,1.276595745,Unknown IP
+19/01/2024 14:25,admin_2,view_player_profile,56.147.138.127,2.142857143,Unknown IP
+19/01/2024 14:28,admin_2,view_player_profile,56.147.138.127,0.582524272,Unknown IP
+19/01/2024 14:34,admin_2,view_player_profile,56.147.138.127,1.666666667,Unknown IP
+19/01/2024 14:35,admin_2,unban_player,56.147.138.127,2.727272727,Unknown IP
+19/01/2024 14:36,admin_2,unban_player,56.147.138.127,1.428571429,Unknown IP
+19/01/2024 14:36,admin_2,reset_password,56.147.138.127,5.454545455,High Speed + Unknown IP
+29/01/2024 20:09,admin_2,reset_password,72.116.204.48,6,High Speed
+29/01/2024 20:09,admin_2,logout,72.116.204.48,6,High Speed
+06/01/2024 00:00,admin_3,login,192.168.1.50,0.001539014,Unknown IP + Unusual Time
+06/01/2024 00:00,admin_3,login,192.168.1.50,6,High Speed + Unknown IP + Unusual Time
+06/01/2024 00:00,admin_3,login,192.168.1.50,6,High Speed + Unknown IP + Unusual Time
+06/01/2024 00:00,admin_3,login,192.168.1.50,6,High Speed + Unknown IP + Unusual Time
+06/01/2024 00:00,admin_3,login,192.168.1.50,6,High Speed + Unknown IP + Unusual Time
+06/01/2024 00:00,admin_3,login,192.168.1.50,6,High Speed + Unknown IP + Unusual Time
+06/01/2024 00:01,admin_3,login,192.168.1.50,6,High Speed + Unknown IP + Unusual Time
+06/01/2024 00:01,admin_3,login,192.168.1.50,6,High Speed + Unknown IP + Unusual Time
+06/01/2024 00:01,admin_3,login,192.168.1.50,6,High Speed + Unknown IP + Unusual Time
+06/01/2024 00:01,admin_3,login,192.168.1.50,6,High Speed + Unknown IP + Unusual Time
+06/01/2024 00:01,admin_3,login,192.168.1.50,6,High Speed + Unknown IP + Unusual Time
+06/01/2024 00:01,admin_3,login,192.168.1.50,6,High Speed + Unknown IP + Unusual Time
+06/01/2024 00:02,admin_3,login,192.168.1.50,6,High Speed + Unknown IP + Unusual Time
+06/01/2024 00:02,admin_3,login,192.168.1.50,6,High Speed + Unknown IP + Unusual Time
+06/01/2024 00:02,admin_3,login,192.168.1.50,6,High Speed + Unknown IP + Unusual Time
+06/01/2024 00:02,admin_3,login,192.168.1.50,6,High Speed + Unknown IP + Unusual Time
+06/01/2024 00:02,admin_3,login,192.168.1.50,6,High Speed + Unknown IP + Unusual Time
+06/01/2024 00:02,admin_3,login,192.168.1.50,6,High Speed + Unknown IP + Unusual Time
+06/01/2024 00:03,admin_3,login,192.168.1.50,6,High Speed + Unknown IP + Unusual Time
+06/01/2024 00:03,admin_3,login,192.168.1.50,6,High Speed + Unknown IP + Unusual Time
+06/01/2024 00:03,admin_3,login,192.168.1.50,3,Unknown IP + Unusual Time
