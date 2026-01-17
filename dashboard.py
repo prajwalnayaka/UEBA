@@ -77,8 +77,6 @@ with c2:
 
 # Row 2: The Culprits
 st.subheader("3. Top Suspicious Admins")
-
-# Group anomalies by Admin ID
 culprit_counts = anomalies['admin_id'].value_counts().reset_index()
 culprit_counts.columns = ['Admin ID', 'Suspicious Actions']
 
