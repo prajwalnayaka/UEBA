@@ -28,9 +28,6 @@ I used streamlit and altair to create and present a simple dashboard which would
 ## Run it locally
 
 If you want this project on your local machine:
-## 🛠️ Local Installation
-
-If you want to run this dashboard on your own machine:
 
 ```
 # 1. Clone the repository
