@@ -23,7 +23,7 @@ Here I extract features from the generated dataset that can be used to detemine 
 ### train_isolation.py
 ___
 
-I chose to train an isolation forest given the low complexity of the dataset. I tweaked around with the conamination hyperparamter until I found the best value.
+I chose to train an isolation forest given the low complexity of the dataset. I set the contamination value to 00.2 to align with the known prevalence of insider threats in the synthetic dataset.
 
 ### dashboard.py
 ___
