@@ -16,7 +16,7 @@ def load_and_process():
     # Generate Reasons for the Anomalies (Just like we did in the report script)
     def get_reason(row):
         reasons = []
-        if row['actions_per_min'] > 20:
+        if row['actions_per_min'] > 15:
             reasons.append("High Speed")
         if row['is_rare_ip'] == 1:
             reasons.append("Unknown IP")
