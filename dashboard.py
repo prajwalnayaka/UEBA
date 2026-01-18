@@ -23,7 +23,7 @@ def load_and_process():
         if row['hour_of_day'] < 6:
             reasons.append("Unusual Time")
         return " + ".join(reasons) if reasons else "Pattern Anomaly"
-    anomalies['reason'] = anomalies.apply(get_reason, axis=1)
+    anomalies['potential_indicators'] = anomalies.apply(get_reason, axis=1)
     return df, normals, anomalies
 
 
@@ -63,7 +63,7 @@ with c1:
 
 with c2:
     st.subheader("2. Threat Reasons")
-    reason_counts = anomalies['reason'].value_counts().reset_index()
+    reason_counts = anomalies['potential_indicators'].value_counts().reset_index()
     reason_counts.columns = ['Reason', 'Count']
 
     # Altair Bar Chart
@@ -90,4 +90,4 @@ st.altair_chart(culprit_chart, use_container_width=True)
 
 # --- 4. RAW DATA VIEWER ---
 with st.expander("📂 View Raw Suspicious Logs"):
-    st.dataframe(anomalies[['timestamp', 'admin_id', 'action', 'reason', 'actions_per_min', 'ip_address']])
+    st.dataframe(anomalies[['timestamp', 'admin_id', 'action', 'potential_indicators', 'actions_per_min', 'ip_address']])
