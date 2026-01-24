@@ -36,16 +36,20 @@ ___
 
 If you want this project on your local machine:
 
-```
+
 # 1. Clone the repository
+```
 git clone https://github.com/prajwalanayakat/UEBA.git
-
+```
 # 2. Navigate to the project directory
+```
 cd UEBA
-
+```
 # 3. Install dependencies
+```
 pip install -r requirements.txt
-
+```
 # 4. Run the dashboard
+```
 streamlit run dashboard.py
-
+```
