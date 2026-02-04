@@ -181,6 +181,7 @@ cython_debug/
 .cursorindexingignore
 
 Practice/
+.idea/
 *.csv
 !game_admin_logs.csv
 own.py
