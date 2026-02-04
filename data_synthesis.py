@@ -13,7 +13,7 @@ NUM_DAYS = 30
 AVG_ACTIONS_PER_DAY = 50
 FILENAME = "game_admin_logs.csv"
 
-# Admin Profiles
+# Admin Profiles and IP addresses
 admins = [f"admin_{i}" for i in range(1, NUM_ADMINS + 1)]
 ips = {admin: fake.ipv4() for admin in admins}
 
