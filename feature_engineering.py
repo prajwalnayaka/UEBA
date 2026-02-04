@@ -13,8 +13,8 @@ print("Feature 'hour_of_day' created.")
 # --- FEATURE 2: SPEED (Actions Per Second) ---
 df = df.sort_values(['admin_id', 'timestamp'])
 df['time_diff'] = df.groupby('admin_id')['timestamp'].diff().dt.total_seconds()
-df['time_diff'] = df['time_diff'].fillna(9999999) # Fill the first action (NaN) with a high value so that the time_diff is essentially 0 but not exactly 0
-df['time_diff'] = df['time_diff'].replace(0, 1) #Avoiding division by zero, which is highly unlikely but is still a non-zero posibility
+df['time_diff'] = df['time_diff'].fillna(9999999) # Fill the first action (NaN) with a high value so that the actions_per_second is essentially 0 but not exactly 0
+df['time_diff'] = df['time_diff'].replace(0, 1) #Avoiding division by zero, which is highly unlikely but is still a non-zero possibility
 
 # Actions Per Minute
 df['actions_per_min'] = 60 / df['time_diff']
