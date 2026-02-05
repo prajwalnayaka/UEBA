@@ -57,7 +57,8 @@ for day in range(NUM_DAYS):
                     "admin_id": admin,
                     "action": action,
                     "ip_address": current_session_ip,
-                    "status": "Success"
+                    "status": "Success",
+                    "is_attack": 0
                 })
 
 # --- INJECT ATTACKS (Keep these the same) ---
@@ -73,7 +74,8 @@ for i in range(200):
         "admin_id": "admin_1",
         "action": "ban_player",
         "ip_address": fake.ipv4(),
-        "status": "Success"
+        "status": "Success",
+        "is_attack": 1
     })
 
 # Scenario 2: Brute Force (Modified to allow 'login' failure)
@@ -84,7 +86,8 @@ for i in range(20):
         "admin_id": "admin_3",
         "action": "login",
         "ip_address": "192.168.1.50",
-        "status": "Fail"
+        "status": "Fail",
+        "is_attack": 1
     })
 # Successful login
 data.append({
@@ -92,7 +95,8 @@ data.append({
     "admin_id": "admin_3",
     "action": "login",
     "ip_address": "192.168.1.50",
-    "status": "Success"
+    "status": "Success",
+    "is_attack": 1
 })
 
 # --- FINALIZE ---
