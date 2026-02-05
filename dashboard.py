@@ -36,13 +36,13 @@ except FileNotFoundError:
 
 # --- 2. METRIC CARDS ---
 col1, col2, col3 = st.columns(3)
-col1.metric("Total Events Logged", f"{len(df):,}")
+col1.metric("Total Events Logged", f"{len(df):,}",)
 col2.metric("Suspicious Events", f"{len(anomalies)}", delta_color="inverse")
 col3.metric("Clean Traffic %", f"{(len(normals) / len(df)):.1%}")
 
 st.divider()
 
-# --- 3. YOUR VISUALIZATIONS ---
+# --- 3. VISUALIZATIONS ---
 # Row 1: The Pie Chart & The Bar Graph
 c1, c2 = st.columns(2)
 with c1:
