@@ -53,7 +53,7 @@ with c1:
     })
 
     # Altair Pie Chart
-    pie_chart = alt.Chart(pie_data).mark_arc(innerRadius=50).encode(
+    pie_chart = alt.Chart(pie_data).mark_arc().encode(
         theta=alt.Theta(field="Count", type="quantitative"),
         color=alt.Color(field="Category", type="nominal",
         scale=alt.Scale(domain=['Normal Traffic', 'Suspected Threats'], range=['#2ecc71', '#e74c3c'])),
