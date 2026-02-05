@@ -13,7 +13,7 @@ def load_and_process():
     df = pd.read_csv("game_admin_results.csv")
     normals = df[df['anomaly_score'] == 1]
     anomalies = df[df['anomaly_score'] == -1].copy()
-    # Generate Reasons for the Anomalies (Just like we did in the report script)
+    # Generate Reasons for the Anomalies
     def get_reason(row):
         reasons = []
         if row['actions_per_min'] > 15:

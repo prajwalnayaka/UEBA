@@ -18,5 +18,5 @@ hacks = df[df['anomaly_score'] == -1]
 print(f"Total Anomalies Found: {len(hacks)}")
 df.to_csv("game_admin_results.csv", index=False)
 print("\nResults saved to 'game_admin_results.csv'. Check it out.")
-hacks.to_csv("suspected_culprits3.csv", index=False)
+hacks.to_csv("suspected_culprits.csv", index=False)
 print("\nSuspects saved to 'suspected_culprits.csv'. Check it out.")
