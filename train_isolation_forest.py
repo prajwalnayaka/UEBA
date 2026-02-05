@@ -16,7 +16,7 @@ print("\n--- MODEL PERFORMANCE ---")
 y_true = ds['is_attack']
 y_pred = ds['pred_label']
 
-print(classification_report(y_true, y_pred, target_names=['Normal', 'Attack']))
+print(classification_report(y_true, y_pred, target_names=['Normal', 'Rogue']))
 
 # Confusion Matrix
 cm = confusion_matrix(y_true, y_pred)
