@@ -13,7 +13,7 @@ def load_and_process():
     df = pd.read_csv("game_admin_results.csv")
     normals = df[df['anomaly_score'] == 1]
     anomalies = df[df['anomaly_score'] == -1].copy()
-    # Generate Reasons for the Anomalies (Just like we did in the report script)
+    # Generate Reasons for the Anomalies 
     def get_reason(row):
         reasons = []
         if row['actions_per_min'] > 15:
@@ -30,7 +30,7 @@ def load_and_process():
 try:
     df, normals, anomalies = load_and_process()
 except FileNotFoundError:
-    st.error("Missing 'game_admin_results.csv'. Please run train_model.py first!")
+    st.error("Missing 'game_admin_results.csv'. Please run train_isolation_forest.py first!")
     st.stop()
 
 
