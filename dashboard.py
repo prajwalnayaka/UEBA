@@ -76,13 +76,13 @@ with c2:
     st.altair_chart(bar_chart, use_container_width=True)
 
 # Row 2: The Culprits
-st.subheader("3. Top Suspicious Admins")
+st.subheader("3. Most Suspicious Admins")
 culprit_counts = anomalies['admin_id'].value_counts().reset_index()
 culprit_counts.columns = ['Admin ID', 'Suspicious Actions']
 
 # Altair Column Chart
 culprit_chart = alt.Chart(culprit_counts).mark_bar(color='#e67e22').encode(
-    x=alt.X('Admin ID', sort='x'),
+    x=alt.X('Admin ID', sort='x',axis=alt.Axis(labelAngle=0)),
     y='Suspicious Actions',
     tooltip=['Admin ID', 'Suspicious Actions']
 )
