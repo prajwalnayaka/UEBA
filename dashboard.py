@@ -30,7 +30,7 @@ def load_and_process():
 try:
     df, normals, anomalies = load_and_process()
 except FileNotFoundError:
-    st.error("Missing 'game_admin_results.csv'. Please run train_model.py first!")
+    st.error("Missing 'game_admin_results.csv'. Please run train_isolation_forest.py first!")
     st.stop()
 
 
