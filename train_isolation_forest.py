@@ -1,17 +1,25 @@
 import pandas as pd
+import numpy as np
 from sklearn.ensemble import IsolationForest
 from sklearn.metrics import classification_report, confusion_matrix
+import matplotlib.pyplot as plt
 
 ds = pd.read_csv("game_admin_derived.csv")
 features = ["hour_of_day", "actions_per_min", "is_rare_ip"]
 X = ds[features]
-model = IsolationForest(contamination=0.04, random_state=42)
+model = IsolationForest(contamination=0.31, random_state=42)
 model.fit(X)
 preds = model.predict(X)
 
 # If pred is -1 (anomaly), we call it 1 (attack). Otherwise, 0.
 ds["pred_label"] = [1 if x == -1 else 0 for x in preds]
-
+scores = model.decision_function(X)
+plt.figure(figsize=(10, 8))
+plt.plot(np.sort(scores))
+plt.xlabel("Data Points")
+plt.ylabel("Anomaly Score (Lower is worse)")
+plt.grid(True)
+plt.show()
 
 print("\n--- MODEL PERFORMANCE ---")
 y_true = ds["is_attack"]
