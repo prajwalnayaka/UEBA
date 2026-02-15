@@ -9,7 +9,7 @@ model = IsolationForest(contamination=0.04, random_state=42)
 model.fit(X)
 preds = model.predict(X)
 
-# If pred is -1 (anomaly), we call it 1 (attack). Otherwise 0.
+# If pred is -1 (anomaly), we call it 1 (attack). Otherwise, 0.
 ds["pred_label"] = [1 if x == -1 else 0 for x in preds]
 
 
