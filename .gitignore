@@ -185,7 +185,7 @@ Practice/
 *.csv
 !game_admin_logs.csv
 own.py
-rando2.py
+/rando
 reasons.py
 setcheck.py
 confusion_matrix.py
