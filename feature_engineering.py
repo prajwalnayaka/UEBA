@@ -36,7 +36,7 @@ print("Feature 'is_rare_ip' created.")
 
 features = df[['hour_of_day', 'actions_per_min', 'is_rare_ip']]
 df.to_csv("game_admin_derived.csv", index=False)
-
 print("Saved derived data fields to 'game_admin_derived.csv'.")
+
 features.to_csv("game_admin_features.csv", index=False)
 print("Saved features to 'game_admin_features.csv'.")
