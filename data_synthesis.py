@@ -24,7 +24,7 @@ work_weights = [0.60, 0.05, 0.05, 0.25, 0.05] #Should all add up to 1
 # --- ATTACKS ---
 # Scenario 1: The "R6 Siege" Hack
 def hack(admin,current_time):
-    hacker_time = current_time + timedelta(days=day)
+    hacker_time = current_time
 
     for i in range(random.randint(100,150)):
         data.append({
@@ -41,7 +41,7 @@ def brute_force(admin,current_time):
     bf_time = random.choice([current_time + timedelta(hours=7),current_time - timedelta(hours=7)])
     attacker_ip = fake.ipv4()
 
-    for i in range(random.randint(1, 25)):
+    for i in range(random.randint(15, 25)):
         data.append({
             "timestamp": bf_time + timedelta(seconds=i * 10),
             "admin_id": admin,
