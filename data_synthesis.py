@@ -108,6 +108,6 @@ for day in range(NUM_DAYS):
 
 # --- FINALIZE ---
 df = pd.DataFrame(data)
-df = df.sort_values("timestamp")
+df = df.sort_values("timestamp").sort_values("admin_id")
 df.to_csv(FILENAME, index=False)
 print(f"Successfully created {FILENAME} with {len(df)} logs.")
