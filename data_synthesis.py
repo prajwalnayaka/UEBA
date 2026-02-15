@@ -21,6 +21,44 @@ ips = {admin: fake.ipv4() for admin in admins}
 work_actions = ['view_player_profile', 'ban_player', 'unban_player', 'reset_password', 'modify_currency']
 work_weights = [0.60, 0.05, 0.05, 0.25, 0.05] #Should all add up to 1
 
+# --- ATTACKS ---
+# Scenario 1: The "R6 Siege" Hack
+def hack(day):
+    hacker_time = start_date + timedelta(days=day)
+    hacker_time = hacker_time.replace(hour=3, minute=0, second=0)
+
+    for i in range(random.randint(100,150)):
+        data.append({
+            "timestamp": hacker_time + timedelta(seconds=i * 3),
+            "admin_id": "admin_1",
+            "action": "ban_player",
+            "ip_address": fake.ipv4(),
+            "status": "Success",
+            "is_attack": 1
+        })
+
+# Scenario 2: Brute Force (Modified to allow 'login' failure)
+def brute_force(day):
+    bf_time = start_date + timedelta(days=day)
+    for i in range(random.randint(1, 25)):
+        data.append({
+            "timestamp": bf_time + timedelta(seconds=i * 10),
+            "admin_id": "admin_3",
+            "action": "login",
+            "ip_address": "192.168.1.50",
+            "status": "Fail",
+            "is_attack": 1
+        })
+    # Successful login
+    data.append({
+        "timestamp": bf_time + timedelta(seconds=random.randint(150, 250)),
+        "admin_id": "admin_3",
+        "action": "login",
+        "ip_address": "192.168.1.50",
+        "status": "Success",
+        "is_attack": 1
+    })
+
 data = []
 
 # --- GENERATE NORMAL TRAFFIC ---
@@ -51,6 +89,12 @@ for day in range(NUM_DAYS):
                     action = 'logout'
                 else:
                     action = np.random.choice(work_actions, p=work_weights)
+                    if random.random() <= 0.15: #15% chance that there will be malicious activity
+                        attack=random.choice([1,2])
+                        if attack ==1:
+                            hack(day)
+                        elif attack==2:
+                            brute_force(day)
 
                 data.append({
                     "timestamp": current_time,
@@ -60,42 +104,6 @@ for day in range(NUM_DAYS):
                     "status": "Success",
                     "is_attack": 0
                 })
-
-# --- INJECT ATTACKS (Keep these the same) ---
-# Scenario 1: The "R6 Siege" Hack
-hacker_time = start_date + timedelta(days=15)
-hacker_time = hacker_time.replace(hour=3, minute=0, second=0)
-
-for i in range(200):
-    data.append({
-        "timestamp": hacker_time + timedelta(seconds=i * 3),
-        "admin_id": "admin_1",
-        "action": "ban_player",
-        "ip_address": fake.ipv4(),
-        "status": "Success",
-        "is_attack": 1
-    })
-
-# Scenario 2: Brute Force (Modified to allow 'login' failure)
-bf_time = start_date + timedelta(days=5)
-for i in range(20):
-    data.append({
-        "timestamp": bf_time + timedelta(seconds=i * 10),
-        "admin_id": "admin_3",
-        "action": "login",
-        "ip_address": "192.168.1.50",
-        "status": "Fail",
-        "is_attack": 1
-    })
-# Successful login
-data.append({
-    "timestamp": bf_time + timedelta(seconds=210),
-    "admin_id": "admin_3",
-    "action": "login",
-    "ip_address": "192.168.1.50",
-    "status": "Success",
-    "is_attack": 1
-})
 
 # --- FINALIZE ---
 df = pd.DataFrame(data)
