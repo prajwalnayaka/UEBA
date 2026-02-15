@@ -62,8 +62,6 @@ for day in range(NUM_DAYS):
                 })
 
 # --- INJECT ATTACKS (Keep these the same) ---
-print("Injecting attacks...")
-
 # Scenario 1: The "R6 Siege" Hack
 hacker_time = start_date + timedelta(days=15)
 hacker_time = hacker_time.replace(hour=3, minute=0, second=0)
