@@ -183,9 +183,9 @@ cython_debug/
 Practice/
 .idea/
 *.csv
-!game_admin_logs.csv
 own.py
-rando2.py
+/rando
+/Performance_old
 reasons.py
 setcheck.py
 confusion_matrix.py

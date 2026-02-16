@@ -21,6 +21,45 @@ ips = {admin: fake.ipv4() for admin in admins}
 work_actions = ['view_player_profile', 'ban_player', 'unban_player', 'reset_password', 'modify_currency']
 work_weights = [0.60, 0.05, 0.05, 0.25, 0.05] #Should all add up to 1
 
+# --- ATTACKS ---
+# Scenario 1: The "R6 Siege" Hack
+def hack(admin,current_time):
+    hacker_time = current_time
+
+    for i in range(random.randint(100,150)):
+        data.append({
+            "timestamp": hacker_time + timedelta(seconds=i * 3),
+            "admin_id": admin,
+            "action": "ban_player",
+            "ip_address": fake.ipv4(),
+            "status": "Success",
+            "is_attack": 1
+        })
+
+# Scenario 2: Brute Force (Modified to allow 'login' failure)
+def brute_force(admin,current_time):
+    bf_time = random.choice([current_time + timedelta(hours=7),current_time - timedelta(hours=7)])
+    attacker_ip = fake.ipv4()
+
+    for i in range(random.randint(15, 25)):
+        data.append({
+            "timestamp": bf_time + timedelta(seconds=i * 10),
+            "admin_id": admin,
+            "action": "login",
+            "ip_address": attacker_ip,
+            "status": "Fail",
+            "is_attack": 1
+        })
+    # Successful login
+    data.append({
+        "timestamp": bf_time + timedelta(seconds=random.randint(150, 250)),
+        "admin_id": admin,
+        "action": "login",
+        "ip_address": attacker_ip,
+        "status": "Success",
+        "is_attack": 1
+    })
+
 data = []
 
 # --- GENERATE NORMAL TRAFFIC ---
@@ -36,7 +75,7 @@ for day in range(NUM_DAYS):
             # Start work around 2 PM (14:00) +/- 2 hours
             start_hour = int(np.random.normal(14, 2))
             start_minute = np.random.randint(0, 60)
-            start_hour = max(0, min(23, start_hour))  # Safety clamp
+            start_hour = max(0, min(23, start_hour))# Safety clamp
 
             session_start_time = current_date.replace(hour=start_hour, minute=start_minute, second=0)
             current_session_ip = ips[admin] if random.random() > 0.01 else fake.ipv4() # Use the same IP for the entire session
@@ -51,7 +90,6 @@ for day in range(NUM_DAYS):
                     action = 'logout'
                 else:
                     action = np.random.choice(work_actions, p=work_weights)
-
                 data.append({
                     "timestamp": current_time,
                     "admin_id": admin,
@@ -61,46 +99,15 @@ for day in range(NUM_DAYS):
                     "is_attack": 0
                 })
 
-# --- INJECT ATTACKS (Keep these the same) ---
-print("Injecting attacks...")
-
-# Scenario 1: The "R6 Siege" Hack
-hacker_time = start_date + timedelta(days=15)
-hacker_time = hacker_time.replace(hour=3, minute=0, second=0)
-
-for i in range(200):
-    data.append({
-        "timestamp": hacker_time + timedelta(seconds=i * 3),
-        "admin_id": "admin_1",
-        "action": "ban_player",
-        "ip_address": fake.ipv4(),
-        "status": "Success",
-        "is_attack": 1
-    })
-
-# Scenario 2: Brute Force (Modified to allow 'login' failure)
-bf_time = start_date + timedelta(days=5)
-for i in range(20):
-    data.append({
-        "timestamp": bf_time + timedelta(seconds=i * 10),
-        "admin_id": "admin_3",
-        "action": "login",
-        "ip_address": "192.168.1.50",
-        "status": "Fail",
-        "is_attack": 1
-    })
-# Successful login
-data.append({
-    "timestamp": bf_time + timedelta(seconds=210),
-    "admin_id": "admin_3",
-    "action": "login",
-    "ip_address": "192.168.1.50",
-    "status": "Success",
-    "is_attack": 1
-})
+            if random.random() <= 0.20:  # 20% chance that there will be malicious activity
+                attack = random.choice([1, 2])
+                if attack == 1:
+                    hack(admin,current_time)
+                elif attack == 2:
+                    brute_force(admin,current_time)
 
 # --- FINALIZE ---
 df = pd.DataFrame(data)
-df = df.sort_values("timestamp")
+df = df.sort_values("timestamp").sort_values("admin_id")
 df.to_csv(FILENAME, index=False)
 print(f"Successfully created {FILENAME} with {len(df)} logs.")
