@@ -75,7 +75,7 @@ for day in range(NUM_DAYS):
             # Start work around 2 PM (14:00) +/- 2 hours
             start_hour = int(np.random.normal(14, 2))
             start_minute = np.random.randint(0, 60)
-            start_hour = max(0, min(23, start_hour))  # Safety clamp
+            start_hour = max(0, min(23, start_hour))# Safety clamp
 
             session_start_time = current_date.replace(hour=start_hour, minute=start_minute, second=0)
             current_session_ip = ips[admin] if random.random() > 0.01 else fake.ipv4() # Use the same IP for the entire session
