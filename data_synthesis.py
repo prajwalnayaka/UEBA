@@ -107,7 +107,7 @@ for day in range(NUM_DAYS):
             early_late = False
             if random.random() <= 0.25:
                 start_hour = random.choice(
-                    [random.choice(range(19, 23)), random.choice(range(4, 7))]
+                    [random.choice(range(19, 23)), random.choice(range(4, 7))] # Working late hours between 7 and 11pm and early hours between 4 am and 7 am
                 )
                 early_late = True
 
