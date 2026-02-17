@@ -36,7 +36,7 @@ def hack(admin, current_time):
     if (
         random.random() < 0.30
     ):  # 30% chance that the attack is happening via the admin's actual IP address (leaked credentials, hacked or stolen laptop/PC)
-        attack_ip = ips[admin]
+        attacker_ip = ips[admin]
     else:
         attacker_ip = fake.ipv4()
 
