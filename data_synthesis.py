@@ -38,7 +38,7 @@ def hack(admin, current_time):
     ):  # 30% chance that the attack is happening via the admin's actual IP address (leaked credentials, hacked or stolen laptop/PC)
         attack_ip = ips[admin]
     else:
-        attack_ip = fake.ipv4()
+        attacker_ip = fake.ipv4()
 
     for i in range(random.randint(100, 150)): # Anywhere between, 100 to 150 ban_player actions
         step = random.randint(2, 10) # Anywhere between, 2 to 10 seconds between each ban
@@ -48,7 +48,7 @@ def hack(admin, current_time):
                 "timestamp": hacker_time,
                 "admin_id": admin,
                 "action": "ban_player",
-                "ip_address": attack_ip,
+                "ip_address": attacker_ip,
                 "status": "Success",
                 "is_attack": 1,
             }
