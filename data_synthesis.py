@@ -55,7 +55,7 @@ def hack(admin, current_time):
         )
 
 
-# Scenario 2: Brute Force (Modified to allow 'login' failure)
+# Scenario 2: Brute Force 
 def brute_force(admin, current_time):
     bf_time = random.choice(
         [current_time + timedelta(hours=7), current_time - timedelta(hours=7)]
