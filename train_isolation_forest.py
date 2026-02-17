@@ -13,13 +13,6 @@ preds = model.predict(X)
 
 # If pred is -1 (anomaly), we call it 1 (attack). Otherwise, 0.
 ds["pred_label"] = [1 if x == -1 else 0 for x in preds]
-# scores = model.decision_function(X)
-# plt.figure(figsize=(10, 8))
-# plt.plot(np.sort(scores))
-# plt.xlabel("Data Points")
-# plt.ylabel("Anomaly Score (Lower is worse)")
-# plt.grid(True)
-# plt.show()
 
 print("\n--- Isolation Forest Performance ---")
 y_true = ds["is_attack"]
