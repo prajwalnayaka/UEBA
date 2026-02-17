@@ -55,12 +55,10 @@ def hack(admin, current_time):
 
 # Scenario 2: Brute Force
 def brute_force(admin, current_time):
-    bf_time = random.choice(
-        [current_time + timedelta(hours=7), current_time - timedelta(hours=7)]
-    )
+    bf_time = random.choice([current_time + timedelta(hours=7), current_time - timedelta(hours=7)]) # 7 hours before or after the time during the function call
     attacker_ip = fake.ipv4()
 
-    for i in range(random.randint(15, 25)):
+    for i in range(random.randint(15, 25)): # Anywhere between 15 to 26
         data.append(
             {
                 "timestamp": bf_time + timedelta(seconds=i * 10),
@@ -104,7 +102,7 @@ for day in range(NUM_DAYS):
             # 25% chance that an admin is working late/early hours
             early_late = False
             if random.random() <= 0.25:
-                start_hour = random.choice([random.choice(range(19, 23)), random.choice(range(4, 7))]) # Working late hours between 7 and 11pm and early hours between 4 am and 7 am
+                start_hour = random.choice([random.choice(range(19, 24)), random.choice(range(4, 8))]) # Working late hours between 7 and 11pm and early hours between 4 am and 7 am
                 early_late = True
 
             session_start_time = current_date.replace(hour=start_hour, minute=start_minute, second=0)
