@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 ds = pd.read_csv("game_admin_derived.csv")
 features = ["hour_of_day", "actions_per_min", "is_rare_ip"]
 X = ds[features]
-model = IsolationForest(contamination='auto', random_state=1)
+model = IsolationForest(contamination="auto", random_state=1)
 model.fit(X)
 preds = model.predict(X)
 
