@@ -7,8 +7,8 @@ from sklearn.metrics import classification_report, confusion_matrix
 ds = pd.read_csv("game_admin_derived.csv")
 
 # 1. Prepare Data
-X =  ds[["hour_of_day", "actions_per_min", "is_rare_ip"]]
-y = ds['is_attack']
+X = ds[["hour_of_day", "actions_per_min", "is_rare_ip"]]
+y = ds["is_attack"]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
 
@@ -18,12 +18,12 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 ratio = float(np.sum(y == 0)) / np.sum(y == 1)
 
 model = xgb.XGBClassifier(
-    objective='binary:logistic',
+    objective="binary:logistic",
     n_estimators=100,
     max_depth=4,
     learning_rate=0.1,
     use_label_encoder=False,
-    eval_metric='logloss'
+    eval_metric="logloss",
 )
 
 # 3. Train
