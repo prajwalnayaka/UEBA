@@ -40,8 +40,8 @@ def hack(admin, current_time):
     else:
         attack_ip = fake.ipv4()
 
-    for i in range(random.randint(100, 150)):
-        step = random.randint(2, 10)
+    for i in range(random.randint(100, 150)): # Anywhere between, 100 to 150 ban_player actions
+        step = random.randint(2, 10) # Anywhere between, 2 to 10 seconds between each ban
         hacker_time += timedelta(seconds=step)
         data.append(
             {
