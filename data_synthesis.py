@@ -33,9 +33,7 @@ work_weights = [0.60, 0.05, 0.05, 0.25, 0.05]  # Should all add up to 1
 def hack(admin, current_time):
     hacker_time = current_time
 
-    if (
-        random.random() < 0.30
-    ):  # 30% chance that the attack is happening via the admin's actual IP address (leaked credentials, hacked or stolen laptop/PC)
+    if random.random() < 0.30:  # 30% chance that the attack is happening via the admin's actual IP address (leaked credentials, hacked or stolen laptop/PC)
         attacker_ip = ips[admin]
     else:
         attacker_ip = fake.ipv4()
