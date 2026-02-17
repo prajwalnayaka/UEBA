@@ -106,31 +106,19 @@ for day in range(NUM_DAYS):
             # 25% chance that an admin is working late/early hours
             early_late = False
             if random.random() <= 0.25:
-                start_hour = random.choice(
-                    [random.choice(range(19, 23)), random.choice(range(4, 7))] # Working late hours between 7 and 11pm and early hours between 4 am and 7 am
-                )
+                start_hour = random.choice([random.choice(range(19, 23)), random.choice(range(4, 7))]) # Working late hours between 7 and 11pm and early hours between 4 am and 7 am
                 early_late = True
 
-            session_start_time = current_date.replace(
-                hour=start_hour, minute=start_minute, second=0
-            )
-            current_session_ip = (
-                ips[admin] if random.random() > 0.01 else fake.ipv4()
-            )  # Use the same IP for the entire session
-            current_time = (
-                session_start_time  # We use this variable to track time moving forward
-            )
+            session_start_time = current_date.replace(hour=start_hour, minute=start_minute, second=0)
+            current_session_ip = (ips[admin] if random.random() > 0.01 else fake.ipv4())  # Use the same IP for the entire session
+            current_time = session_start_time  # We use this variable to track time moving forward
 
             for i in range(num_actions):
-                if (
-                    random.random() < 0.1
-                ):  # 10% chance that an admin performs actions very fast which looks suspicious
+                if random.random() < 0.1:  # 10% chance that an admin performs actions very fast which looks suspicious
                     time_step = np.random.randint(2, 10)
                 else:
                     time_step = np.random.randint(10, 120)
-                current_time += timedelta(
-                    seconds=time_step
-                )  # A gap of 10 to 120 seconds between each action
+                current_time += timedelta(seconds=time_step) # A gap of 10 to 120 seconds between each action
                 if i == 0:
                     action = "login"
                 elif i == num_actions - 1:
@@ -147,14 +135,10 @@ for day in range(NUM_DAYS):
                         "is_attack": 0,
                     }
                 )
-                if (
-                    early_late and random.random() < 0.15
-                ):  # 85% chance that the admin is actually working late and not a malicious attack
+                if early_late and random.random() < 0.15:  # 85% chance that the admin is actually working late/early and not a malicious attack
                     continue
 
-            if (
-                random.random() <= 0.20
-            ):  # 20% chance that there will be malicious activity
+            if random.random() <= 0.20:  # 20% chance that there will be malicious activity
                 attack = random.choice([1, 2])
                 if attack == 1:
                     hack(admin, current_time)
