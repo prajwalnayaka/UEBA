@@ -185,7 +185,6 @@ Practice/
 *.csv
 !game_admin_logs.csv
 own.py
-/rando
 /Performance
 /r4.2
 reasons.py
