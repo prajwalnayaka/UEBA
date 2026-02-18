@@ -24,19 +24,19 @@ Here I extract features from the generated dataset that can be used to detemine 
 ___
 
 I chose to train an isolation forest given the low complexity of the dataset. I set the contamination value to 0.3 which was determined by observing the 'elbow' graph. 
-\n Precision: 0.67
+Precision: 0.67
 
 ### train_logistic_regression.py
 ___
 
 Trained the logistic regression model, it works really good given the simple nature of the dataset.
-\n Precison: 0.91
+Precison: 0.91
 
 ### train_XGBoost.py
 ___
 
 Trained the XGBoost model, it used to overfit very easily on the primitive versions of the dataset. Used this model's metrics as a sort of quality rating on the dataset. After multiple modifictions and iterations the final datset was conceived.
-\n Precision: 0.95
+Precision: 0.95
 
 ### comparison.py
 ___
