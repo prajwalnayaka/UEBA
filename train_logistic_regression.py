@@ -14,7 +14,7 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
 print("\n--- Logistic Regression Performance ---")
-print(classification_report(y_test, y_pred))
+print(classification_report(y_test, y_pred,target_names=['Normal','Rogue']))
 cm = confusion_matrix(y_test, y_pred)
 print("Confusion Matrix:")
 print(f"True Negatives (Normal detected as Normal): {cm[0][0]}")
