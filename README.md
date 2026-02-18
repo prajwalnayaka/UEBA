@@ -62,7 +62,17 @@ cd UEBA
 ```
 pip install -r requirements.txt
 ```
-### 4. Run the dashboard
+### 4. Run the feature_engineering.py file
 ```
-streamlit run dashboard.py
+python feature_engineeing.py
+```
+### 5. Train the models
+```
+python train_isolation_forest.py
+python train_logistic_regression.py
+python train_XGBoost.py
+```
+### 6. Run the dashboard
+```
+streamlit run comparison.py
 ```
