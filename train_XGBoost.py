@@ -13,10 +13,6 @@ y = ds["is_attack"]
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
 
 # 2. Initialize XGBoost
-# scale_pos_weight calculation: sum(negative) / sum(positive)
-# This tells the model: "Pay X times more attention to the Attacks because they are rare."
-ratio = float(np.sum(y == 0)) / np.sum(y == 1)
-
 model = xgb.XGBClassifier(
     objective="binary:logistic",
     n_estimators=100,
