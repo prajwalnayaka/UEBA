@@ -35,7 +35,7 @@ y_pred = model.predict(X_test)
 
 # 5. Evaluate
 print("\n--- XGBoost Performance ---")
-print(classification_report(y_test, y_pred))
+print(classification_report(y_test, y_pred,target_names=['Normal','Rogue']))
 
 cm = confusion_matrix(y_test, y_pred)
 print("Confusion Matrix:")
