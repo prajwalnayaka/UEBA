@@ -1,6 +1,8 @@
 import xgboost as xgb
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, confusion_matrix
 
@@ -11,6 +13,7 @@ X = ds[["hour_of_day", "actions_per_min", "is_rare_ip"]]
 y = ds["is_attack"]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
+classes = ['Normal','Malicious']
 
 # 2. Initialize XGBoost
 model = xgb.XGBClassifier(
@@ -24,7 +27,13 @@ model = xgb.XGBClassifier(
 
 # 3. Train
 print("Training XGBoost...")
-model.fit(X_train, y_train)
+evalset = [(X_train, y_train), (X_test, y_test)]
+
+model.fit(
+    X_train, y_train,
+    eval_set=evalset,
+    verbose=False
+)
 
 # 4. Predict
 y_pred = model.predict(X_test)
@@ -32,10 +41,25 @@ y_pred = model.predict(X_test)
 # 5. Evaluate
 print("\n--- XGBoost Performance ---")
 print(classification_report(y_test, y_pred,target_names=['Normal','Rogue']))
+results = model.evals_result()
+train_loss = results['validation_0']['logloss']
+test_loss = results['validation_1']['logloss']
+
+plt.figure(figsize=(8, 5))
+plt.plot(train_loss, label='Training Loss', color='green')
+plt.plot(test_loss, label='Testing Loss', color='red', linestyle='--')
+
+plt.title('XGBoost: Training vs Testing Loss')
+plt.xlabel('Number of Trees (Estimators)')
+plt.ylabel('Log Loss (Lower is Better)')
+plt.legend()
+plt.grid(True, alpha=0.3)
+plt.savefig('XGB_Train_vs_Test.png',dpi=600)
+plt.show()
 
 cm = confusion_matrix(y_test, y_pred)
-print("Confusion Matrix:")
-print(f"True Negatives (Normal detected as Normal): {cm[0][0]}")
-print(f"False Positives (Normal flagged as Attack): {cm[0][1]}")
-print(f"False Negatives (Attack missed): {cm[1][0]}")
-print(f"True Positives (Attack caught): {cm[1][1]}")
+plt.figure(figsize=(8, 8))
+sns.heatmap(cm, annot=True, fmt="d",cmap="YlGnBu",xticklabels=classes, yticklabels=classes)
+plt.savefig('XGBoost_Confusion_Matrix.png',dpi=600)
+plt.title('Confusion Matrix')
+plt.show()
