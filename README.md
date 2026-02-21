@@ -13,7 +13,7 @@ I injected some "suspicious" behavior into the logs. Extracted features from thi
 ### data_synthesis.py
 ___
 
-This script creates a dataset of logs. It comprises of timestamp, admin_id, action performed, admin's IP address and status of action. Poisson distribution is used to detemine the number of actions an admin performs per day, this is done to best simulate how people naturally work.
+This script creates a dataset of logs. It comprises of timestamp, admin_id, action performed, admin's IP address and status of action. Poisson distribution is used to detemine the number of actions an admin performs per day, this is done to best simulate how people naturally work. Accress it on [Kaggle.](https://www.kaggle.com/datasets/prajwalnayakat/ueba-insider-threat-and-attack-detection)
 
 ### feature_engineering.py
 ___
