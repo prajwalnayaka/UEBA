@@ -48,7 +48,6 @@ test_loss = results['validation_1']['logloss']
 plt.figure(figsize=(8, 5))
 plt.plot(train_loss, label='Training Loss', color='green')
 plt.plot(test_loss, label='Testing Loss', color='red', linestyle='--')
-
 plt.title('XGBoost: Training vs Testing Loss')
 plt.xlabel('Number of Trees (Estimators)')
 plt.ylabel('Log Loss (Lower is Better)')
