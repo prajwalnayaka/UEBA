@@ -183,6 +183,8 @@ cython_debug/
 Practice/
 .idea/
 *.csv
+/rando
+*.png
 !game_admin_logs.csv
 own.py
 /Performance
