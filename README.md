@@ -80,7 +80,7 @@ streamlit run comparison.py
 ---
 ## Streamlit Dashboard
 
-<img width="1907" height="783" alt="1" src="https://github.com/user-attachments/assets/273c8121-77d2-417e-a1ac-f0fd363064eb" />
+<img width="1778" height="777" alt="1" src="https://github.com/user-attachments/assets/39ed04fc-5f6c-4ab1-8346-043b7202baf7" />
 
 <img width="1823" height="836" alt="2" src="https://github.com/user-attachments/assets/36f9eb4c-04bd-4573-86f2-e74b5affce61" />
 
