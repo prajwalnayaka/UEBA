@@ -71,6 +71,7 @@ python feature_engineeing.py
 python train_isolation_forest.py
 python train_logistic_regression.py
 python train_XGBoost.py
+
 ```
 ### 6. Run the dashboard
 ```
@@ -79,3 +80,10 @@ streamlit run comparison.py
 ---
 ## Streamlit Dashboard
 
+<img width="1907" height="783" alt="1" src="https://github.com/user-attachments/assets/273c8121-77d2-417e-a1ac-f0fd363064eb" />
+
+<img width="1823" height="836" alt="2" src="https://github.com/user-attachments/assets/36f9eb4c-04bd-4573-86f2-e74b5affce61" />
+
+<img width="1772" height="732" alt="3" src="https://github.com/user-attachments/assets/5b98dbd7-f9f6-4a15-8020-9403955af56a" />
+
+<img width="903" height="552" alt="4" src="https://github.com/user-attachments/assets/8384cc63-7110-4a08-a42b-a1ed8bd1a936" />
