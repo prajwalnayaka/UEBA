@@ -61,30 +61,30 @@ st.subheader("Receiver Operating Characteristic Curve")
 c1,c2=st.columns(2)
 with c1:
     st.subheader("Logistic Regression")
-    st.image(r"D:\UEBA\Performance\Graphs and CMs\LR_ROC_Curve.png",caption="ROC Curve of Logistic Regression")
+    st.image(r".\Graphs and CMs\LR_ROC_Curve.png",caption="ROC Curve of Logistic Regression")
 
 with c2:
     st.subheader("XGBoost")
-    st.image(r"D:\UEBA\Performance\Graphs and CMs\XGB_ROC_Curve.png",caption="ROC Curve of XGBoost")
+    st.image(r".\Graphs and CMs\XGB_ROC_Curve.png",caption="ROC Curve of XGBoost")
 
 st.divider()
 st.subheader("Training Loss vs Testing Loss")
 c1,c2=st.columns(2)
 with c1:
     st.subheader("Logistic Regression")
-    st.image(r"D:\UEBA\Performance\Graphs and CMs\LR_Train_vs_Test.png",caption="Train vs Test of Logistic Regression")
+    st.image(r".\Graphs and CMs\LR_Train_vs_Test.png",caption="Train vs Test of Logistic Regression")
 
 with c2:
     st.subheader("XGBoost")
-    st.image(r"D:\UEBA\Performance\Graphs and CMs\XGB_Train_vs_Test.png",caption="Train vs Test of XGBoost")
+    st.image(r".\Graphs and CMs\XGB_Train_vs_Test.png",caption="Train vs Test of XGBoost")
 
 st.divider()
 st.subheader("Confusion Matrices")
 c1,c2=st.columns(2)
 with c1:
     st.subheader("Logistic Regression")
-    st.image(r"D:\UEBA\Performance\Graphs and CMs\LR_Confusion_Matrix.png",caption="Confusion Matrix of Logistic Regression")
+    st.image(r".\Graphs and CMs\LR_Confusion_Matrix.png",caption="Confusion Matrix of Logistic Regression")
 
 with c2:
     st.subheader("XGBoost")
-    st.image(r"D:\UEBA\Performance\Graphs and CMs\XGBoost_Confusion_Matrix.png",caption="Confusion Matrix of XGBoost")
+    st.image(r".\Graphs and CMs\XGBoost_Confusion_Matrix.png",caption="Confusion Matrix of XGBoost")
