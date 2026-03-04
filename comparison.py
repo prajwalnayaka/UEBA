@@ -19,6 +19,7 @@ def load_data():
 
 ds = load_data()
 st.divider()
+st.subheader('Performance Metrics')
 c1,c2,c3=st.columns(3)
 
 model_color_scale = alt.Scale(
@@ -30,6 +31,7 @@ with c1:
     chart = alt.Chart(ds).mark_bar().encode(
         x=alt.X('Model', axis=alt.Axis(labelAngle=0)),
         y=alt.Y('Precision', scale=alt.Scale(domain=[0, 1])),
+        color=alt.Color('Model', scale=model_color_scale),
         tooltip=['Model', 'Precision']
     )
     st.altair_chart(chart, width='stretch')
@@ -39,6 +41,7 @@ with c2:
     chart=alt.Chart(ds).mark_bar().encode(
         x=alt.X('Model', axis=alt.Axis(labelAngle=0)),
         y=alt.Y('Recall', scale=alt.Scale(domain=[0, 1])),
+        color=alt.Color('Model', scale=model_color_scale),
         tooltip=['Model', 'Recall']
     )
     st.altair_chart(chart, width='stretch')
@@ -48,6 +51,7 @@ with c3:
     chart=alt.Chart(ds).mark_bar().encode(
         x=alt.X('Model', axis=alt.Axis(labelAngle=0)),
         y=alt.Y('F1-Score', scale=alt.Scale(domain=[0, 1])),
+        color=alt.Color('Model', scale=model_color_scale),
         tooltip=['Model', 'F1-Score']
     )
     st.altair_chart(chart, width='stretch')
