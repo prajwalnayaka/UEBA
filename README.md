@@ -41,7 +41,7 @@ Precision: 0.95
 ### comparison.py
 ___
 
-I used streamlit and altair to create and present a simple dashboard to draw comparison between models' performances. 
+I used streamlit and altair to create and present a simple dashboard to draw comparison between the models' performances. 
 
 
 ## Run it locally
@@ -76,3 +76,6 @@ python train_XGBoost.py
 ```
 streamlit run comparison.py
 ```
+---
+## Streamlit Dashboard
+
