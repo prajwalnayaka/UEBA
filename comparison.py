@@ -23,7 +23,7 @@ c1,c2,c3=st.columns(3)
 
 model_color_scale = alt.Scale(
     domain=['Isolation Forest', 'Logistic Regression', 'XGBoost'],
-    range=['#d43b2b', '#ce9c31', '#48c639']
+    range=['#d43b2b', '#ffff00', '#48c639']
 )
 with c1:
     st.subheader("Precision")
@@ -32,7 +32,7 @@ with c1:
         y=alt.Y('Precision', scale=alt.Scale(domain=[0, 1])),
         tooltip=['Model', 'Precision']
     )
-    st.altair_chart(chart, use_container_width=True)
+    st.altair_chart(chart, width='stretch')
 
 with c2:
     st.subheader("Recall")
@@ -41,7 +41,7 @@ with c2:
         y=alt.Y('Recall', scale=alt.Scale(domain=[0, 1])),
         tooltip=['Model', 'Recall']
     )
-    st.altair_chart(chart, use_container_width=True)
+    st.altair_chart(chart, width='stretch')
 
 with c3:
     st.subheader("F1-Score")
@@ -50,4 +50,37 @@ with c3:
         y=alt.Y('F1-Score', scale=alt.Scale(domain=[0, 1])),
         tooltip=['Model', 'F1-Score']
     )
-    st.altair_chart(chart, use_container_width=True)
+    st.altair_chart(chart, width='stretch')
+
+st.divider()
+st.subheader("Receiver Operating Characteristic Curve")
+c1,c2=st.columns(2)
+with c1:
+    st.subheader("Logistic Regression")
+    st.image(r"D:\UEBA\Performance\Graphs and CMs\LR_ROC_Curve.png",caption="ROC Curve of Logistic Regression")
+
+with c2:
+    st.subheader("XGBoost")
+    st.image(r"D:\UEBA\Performance\Graphs and CMs\XGB_ROC_Curve.png",caption="ROC Curve of XGBoost")
+
+st.divider()
+st.subheader("Training Loss vs Testing Loss")
+c1,c2=st.columns(2)
+with c1:
+    st.subheader("Logistic Regression")
+    st.image(r"D:\UEBA\Performance\Graphs and CMs\LR_Train_vs_Test.png",caption="Train vs Test of Logistic Regression")
+
+with c2:
+    st.subheader("XGBoost")
+    st.image(r"D:\UEBA\Performance\Graphs and CMs\XGB_Train_vs_Test.png",caption="Train vs Test of XGBoost")
+
+st.divider()
+st.subheader("Confusion Matrices")
+c1,c2=st.columns(2)
+with c1:
+    st.subheader("Logistic Regression")
+    st.image(r"D:\UEBA\Performance\Graphs and CMs\LR_Confusion_Matrix.png",caption="Confusion Matrix of Logistic Regression")
+
+with c2:
+    st.subheader("XGBoost")
+    st.image(r"D:\UEBA\Performance\Graphs and CMs\XGBoost_Confusion_Matrix.png",caption="Confusion Matrix of XGBoost")
